@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:58:24 by pipolint          #+#    #+#             */
-/*   Updated: 2023/11/12 15:16:50 by pipolint         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:12:07 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdint.h>
+
+/*
+**	ft_printf and get_next_line includes
+*/
+# include "ft_printf/ft_printf.h"
+# include "get_next_line/get_next_line.h"
 
 typedef struct s_list
 {
