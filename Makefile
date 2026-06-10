@@ -25,8 +25,6 @@ FLAGS 	= 	-Wall -Wextra -Werror
 
 OBJS	= 	$(SRCS:.c=.o)
 
-BON_OBJ = 	$(BON_SRC:.c=.o)
-
 all: $(NAME) $(PRINTF)
 
 $(NAME): $(OBJS) $(GNL_OBJ)
@@ -43,8 +41,9 @@ $(PRINTF):
 re: fclean all
 
 clean:
+
+	make -C ./ft_printf clean
 	rm -f $(OBJS)
-	rm -f $(BON_OBJ)
 	rm -f $(GNL_OBJ)
 # 	rm -f *.o */*.o
 
