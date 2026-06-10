@@ -19,7 +19,7 @@ SRCS	= 	ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprin
 			ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-CC 		= 	cc
+CC 		= 	gcc
 
 FLAGS 	= 	-Wall -Wextra -Werror
 
@@ -43,7 +43,10 @@ $(PRINTF):
 re: fclean all
 
 clean:
-	rm -f *.o */*.o
+	rm -f $(OBJS)
+	rm -f $(BON_OBJ)
+	rm -f $(GNL_OBJ)
+# 	rm -f *.o */*.o
 
 fclean: clean
 	rm -f $(NAME)

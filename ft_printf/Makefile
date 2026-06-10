@@ -12,6 +12,8 @@ OBJS = $(SRCS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
+CC := gcc
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -23,11 +25,10 @@ $(NAME): $(OBJS)
 bonus: all
 
 clean:
-	#rm -f $(LIBFT_DIR)/*.o
-	rm -f *.o
+	rm -f $(OBJS)
 
 fclean: clean
-	#rm -f $(LIBFT_DIR)$(LIBFT)
+#	rm -f $(LIBFT_DIR)$(LIBFT)
 	rm -f libftprintf.a
 
 re: fclean all
