@@ -4,9 +4,11 @@ NAME	= 	libft.a
 PRINTF	=   ft_printf/libftprintf.a
 
 # get_next_line
-GNL_DIR =	get_next_line/
+GNL_DIR =	get_next_line
 
-GNL_SRC	=	$(GNL_DIR)get_next_line.c $(GNL_DIR)get_next_line_utils.c
+# GNL_SRC	=	$(GNL_DIR)/get_next_line.c $(GNL_DIR)get_next_line_utils.c
+
+GNL_SRC = $(addprefix $(GNL_DIR)/, get_next_line.c get_next_line_utils.c)
 
 GNL_OBJ	=	$(GNL_SRC:.c=.o)
 
@@ -36,6 +38,9 @@ $(NAME): $(OBJS) $(GNL_OBJ)
 
 $(PRINTF):
 	make -C ft_printf/
+
+$(GNL_DIR)/%.o: $(GNL_DIR)/%.c
+	$(CC) $(FLAGS) -c $^ -o $@
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(FLAGS) -c $^ -o $@
