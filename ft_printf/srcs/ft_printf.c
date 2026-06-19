@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pipolint <pipolint@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:07:14 by pipolint          #+#    #+#             */
-/*   Updated: 2023/12/07 12:04:41 by pipolint         ###   ########.fr       */
+/*   Updated: 2026/06/19 17:17:05 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	do_print(const char *format, va_list args, t_flags *flags)
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			i++;
-			ft_parse_string(&format[i], flags);
+			ft_parse_string(&format[i], args, flags);
 			if (flags->f_width == 2147483647 || flags->p_width == 2147483647
 				|| flags->f_width == -2147483648
 				|| flags->p_width == -2147483648)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pipolint <pipolint@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 01:10:53 by pipolint          #+#    #+#             */
-/*   Updated: 2023/11/29 20:39:04 by pipolint         ###   ########.fr       */
+/*   Updated: 2026/06/19 17:16:20 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	ft_check_flags_2(const char *format, t_flags *flags)
 		flags->is_space = 0;
 }
 
-static void	ft_check_flags_1(const char *format, t_flags *flags)
+static void	ft_check_flags_1(va_list args, const char *format, t_flags *flags)
 {
 	if (*format == '0')
 	{
@@ -39,7 +39,9 @@ static void	ft_check_flags_1(const char *format, t_flags *flags)
 			flags->f_width = ft_atoi(format);
 		}
 	}
-	if (ft_isdigit(*format) && !flags->f_width && !flags->is_period)
+	if (*format == '*')
+		flags->f_width = va_arg(args, int);
+	else if (ft_isdigit(*format) && !flags->f_width && !flags->is_period)
 		flags->f_width = ft_atoi(format);
 	if (*format == '#')
 		flags->is_hash = 1;
@@ -52,14 +54,14 @@ static void	ft_check_flags_1(const char *format, t_flags *flags)
 	ft_check_flags_2(format, flags);
 }
 
-void	ft_parse_string(const char *format, t_flags *flags)
+void	ft_parse_string(const char *format, va_list args, t_flags *flags)
 {
 	size_t	i;
 
 	i = 0;
 	while (format[i] && !ft_is_specifier(format[i]))
 	{
-		ft_check_flags_1(&format[i], flags);
+		ft_check_flags_1(args, &format[i], flags);
 		i++;
 	}
 	if (ft_is_specifier(format[i]) || format[i] == '%')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_specifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pipolint <pipolint@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:17:06 by pipolint          #+#    #+#             */
-/*   Updated: 2023/11/29 14:27:52 by pipolint         ###   ########.fr       */
+/*   Updated: 2026/06/19 17:13:13 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

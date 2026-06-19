@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pipolint <pipolint@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:32:59 by pipolint          #+#    #+#             */
-/*   Updated: 2023/12/21 14:13:40 by pipolint         ###   ########.fr       */
+/*   Updated: 2026/06/19 17:16:43 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_flags
 }	t_flags;
 
 int		ft_printf(const char *format, ...);
-void	ft_parse_string(const char *format, t_flags *flags);
+void	ft_parse_string(const char *format, va_list args, t_flags *flags);
 int		ft_is_specifier(char c);
 void	ft_print_char(char c, int *written, t_flags *flags);
 int		ft_putchar_n(char c, int fd, int amount);
